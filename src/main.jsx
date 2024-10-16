@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import { PrimeReactProvider } from "primereact/api";
 
 import "./index.css";
+import { AuthProvider } from "./context/AuthProvider.jsx";
 
 const value = {
   ripple: true,
@@ -13,7 +14,9 @@ const value = {
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <PrimeReactProvider value={value}>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </PrimeReactProvider>
   </StrictMode>
 );

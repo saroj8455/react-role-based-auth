@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <footer>
-      <div className="surface-section px-4 md:px-6 lg:px-8">
+      <div className=" px-4 md:px-6 lg:px-8">
         <div className="py-6 flex flex-column sm:flex-row sm:align-items-center justify-content-between">
           <div>
             <img
