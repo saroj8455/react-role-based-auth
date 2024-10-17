@@ -3,7 +3,7 @@ import React from "react";
 import useAuth from "../hooks/useAuth";
 
 export default function RequiredAuth({ allowedRoles }) {
-  const { auth } = useAuth();
+  let { auth } = useAuth();
   const location = useLocation();
 
   //   {
@@ -14,7 +14,12 @@ export default function RequiredAuth({ allowedRoles }) {
   // }
   // const isAllowed = allowedRoles.includes(auth.role);
 
-  console.log(auth);
+  console.log(JSON.parse(localStorage.getItem("authInfo")));
+
+  if (!Object.keys(auth).length > 0) {
+    auth = JSON.parse(localStorage.getItem("authInfo")) | {};
+  }
+  console.log("checking---auth", auth);
 
   return auth?.roles?.find((role) => allowedRoles?.includes(role)) ? (
     <Outlet />

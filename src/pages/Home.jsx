@@ -1,6 +1,7 @@
 import React from "react";
 import PageLayout from "./PageLayout";
 import useAuth from "../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const ROLES = {
   User: 2001,
@@ -41,15 +42,15 @@ export default function Home() {
         <div className="text-3xl">Public Route</div>
 
         <div className="my-3">
-          <p>Login</p>
-          <p>Register</p>
+          <Link to="/">Login Page</Link>
+          <Link to="register">Register Page</Link>
         </div>
 
         <div className="text-3xl">Private Route</div>
         <div className="mt-3">
-          <p>Home</p>
-          <p>Editors Page</p>
-          <p>Admin Page</p>
+          <Link to="/">Home Page</Link>
+          <Link to="editor">Editors Page</Link>
+          <Link to="admin">Admin Page</Link>
         </div>
       </article>
     </PageLayout>

@@ -40,7 +40,9 @@ export default function Login() {
         // perform login API call
         const accessToken = uuidv6(); // Generate a UUID token
         const roles = ROLES.Admin;
-        setAuth({ username, pwd, accessToken, roles: [roles] });
+        const authInfo = { username, pwd, accessToken, roles: [roles] };
+        setAuth(authInfo);
+        localStorage.setItem("authInfo", JSON.stringify(authInfo));
 
         // Clear input fields
         setUsername("");
